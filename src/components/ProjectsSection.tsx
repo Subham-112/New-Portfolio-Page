@@ -35,7 +35,7 @@ const projects = [
     technologies: ['React', 'Weather API', 'Chart.js', 'CSS3'],
     liveUrl: '#',
     githubUrl: '#',
-    featured: false,
+    featured: true,
   },
 ];
 
