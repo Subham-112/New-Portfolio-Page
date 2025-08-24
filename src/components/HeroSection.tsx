@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { TypewriterEffect } from './TypewriterEffect';
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
-import profileImage from '@/assets/profile-headshot.jpg';
+import profileImage from '@/assets/Profie.jpg';
 
 export const HeroSection = () => {
   const scrollToNextSection = () => {
@@ -32,7 +32,7 @@ export const HeroSection = () => {
 
           {/* Main heading */}
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Hi, I'm <span className="gradient-text">Alex Johnson</span>
+            Hi, I'm <span className="gradient-text">Subham Sahu</span>
           </h1>
 
           {/* Typewriter effect */}
@@ -64,7 +64,7 @@ export const HeroSection = () => {
             <Button 
               size="lg" 
               variant="outline" 
-              className="border-primary/30 hover:bg-primary/10 transition-smooth px-8 py-3"
+              className="border-primary/30 hover:bg-primary/10 hover:text-blue-500 transition-smooth px-8 py-3"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Get In Touch
@@ -73,13 +73,13 @@ export const HeroSection = () => {
 
           {/* Social Links */}
           <div className="flex justify-center space-x-6 mb-16">
-            <Button variant="ghost" size="icon" className="hover:bg-primary/10 hover-lift">
+            <Button variant="ghost" size="icon" className="hover:bg-primary/10 hover:text-blue-500 hover-lift">
               <Github className="w-6 h-6" />
             </Button>
-            <Button variant="ghost" size="icon" className="hover:bg-primary/10 hover-lift">
+            <Button variant="ghost" size="icon" className="hover:bg-primary/10 hover:text-blue-500 hover-lift">
               <Linkedin className="w-6 h-6" />
             </Button>
-            <Button variant="ghost" size="icon" className="hover:bg-primary/10 hover-lift">
+            <Button variant="ghost" size="icon" className="hover:bg-primary/10 hover:text-blue-500 hover-lift">
               <Mail className="w-6 h-6" />
             </Button>
           </div>

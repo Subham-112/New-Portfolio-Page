@@ -1,26 +1,36 @@
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter, Send } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  Twitter,
+  Send,
+} from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 export const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -28,19 +38,26 @@ export const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    const { name, email, subject, message } = formData;
 
+    // Construct the message
+    const text = `*New Portfolio Message* 🚀 Name: ${name}, Email: ${email}, Subject: ${subject}, Message: ${message}`;
+
+    // Encode and redirect to WhatsApp
+    const whatsappUrl = `https://wa.me/917681070688?text=${encodeURIComponent( text )}`;
+    window.open(whatsappUrl, "_blank");
+
+    // Show confirmation toast
     toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you soon!",
+      title: "Redirecting to WhatsApp 📲",
+      description: "Your message will be sent through WhatsApp.",
     });
 
     setFormData({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
     });
     setIsSubmitting(false);
   };
@@ -48,42 +65,42 @@ export const ContactSection = () => {
   const contactInfo = [
     {
       icon: <Mail className="w-5 h-5" />,
-      label: 'Email',
-      value: 'alex.johnson@email.com',
-      href: 'mailto:alex.johnson@email.com',
+      label: "Email",
+      value: "subhamsahu51006@email.com",
+      href: "mailto:subhamsahu51006@email.com",
     },
     {
       icon: <Phone className="w-5 h-5" />,
-      label: 'Phone',
-      value: '+1 (555) 123-4567',
-      href: 'tel:+15551234567',
+      label: "Phone",
+      value: "+91 7681070688",
+      href: "tel:+917681070688",
     },
     {
       icon: <MapPin className="w-5 h-5" />,
-      label: 'Location',
-      value: 'San Francisco, CA',
-      href: '#',
+      label: "Location",
+      value: "Bhubaneswar, Odisha",
+      href: "https://maps.app.goo.gl/TXRf35wDzZDjeh2EA",
     },
   ];
 
   const socialLinks = [
     {
       icon: <Github className="w-5 h-5" />,
-      label: 'GitHub',
-      href: 'https://github.com',
-      color: 'hover:text-gray-400',
+      label: "GitHub",
+      href: "https://github.com/Subham-112/",
+      color: "hover:text-gray-400",
     },
     {
       icon: <Linkedin className="w-5 h-5" />,
-      label: 'LinkedIn',
-      href: 'https://linkedin.com',
-      color: 'hover:text-blue-400',
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/subham-sahu-489382338/",
+      color: "hover:text-blue-400",
     },
     {
       icon: <Twitter className="w-5 h-5" />,
-      label: 'Twitter',
-      href: 'https://twitter.com',
-      color: 'hover:text-sky-400',
+      label: "Twitter",
+      href: "https://twitter.com",
+      color: "hover:text-sky-400",
     },
   ];
 
@@ -97,7 +114,8 @@ export const ContactSection = () => {
               Get In <span className="gradient-text">Touch</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Have a project in mind or want to collaborate? I'd love to hear from you!
+              Have a project in mind or want to collaborate? I'd love to hear
+              from you!
             </p>
           </div>
 
@@ -153,8 +171,8 @@ export const ContactSection = () => {
                       className="bg-muted/30 border-border/50 focus:border-primary transition-smooth resize-none"
                     />
                   </div>
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     disabled={isSubmitting}
                     className="w-full gradient-primary hover:shadow-glow transition-all duration-300 text-white font-semibold py-3"
                   >
@@ -178,7 +196,9 @@ export const ContactSection = () => {
             <div className="space-y-8">
               <Card className="bg-card/50 border-border/50 hover:bg-card/80 transition-smooth">
                 <CardHeader>
-                  <CardTitle className="text-2xl">Contact Information</CardTitle>
+                  <CardTitle className="text-2xl">
+                    Contact Information
+                  </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-6">
                   {contactInfo.map((info, index) => (
@@ -188,8 +208,8 @@ export const ContactSection = () => {
                       </div>
                       <div>
                         <div className="font-medium">{info.label}</div>
-                        <a 
-                          href={info.href} 
+                        <a
+                          href={info.href}
                           className="text-muted-foreground hover:text-primary transition-smooth"
                         >
                           {info.value}
@@ -211,7 +231,7 @@ export const ContactSection = () => {
                         key={index}
                         href={social.href}
                         target="_blank"
-                        rel="noopener noreferrer"  
+                        rel="noopener noreferrer"
                         className={`text-muted-foreground ${social.color} transition-smooth p-3 rounded-lg bg-background/10 hover:bg-background/20 hover-lift`}
                         aria-label={social.label}
                       >
@@ -227,13 +247,18 @@ export const ContactSection = () => {
 
               <Card className="bg-card/50 border-border/50">
                 <CardContent className="p-6 text-center">
-                  <h3 className="text-lg font-semibold mb-2">Available for work</h3>
+                  <h3 className="text-lg font-semibold mb-2">
+                    Available for work
+                  </h3>
                   <p className="text-muted-foreground text-sm mb-4">
-                    I'm currently available for freelance projects and full-time opportunities.
+                    I'm currently available for freelance projects and full-time
+                    opportunities.
                   </p>
                   <div className="flex items-center justify-center">
                     <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse mr-2"></div>
-                    <span className="text-green-500 font-medium">Open to opportunities</span>
+                    <span className="text-green-500 font-medium">
+                      Open to opportunities
+                    </span>
                   </div>
                 </CardContent>
               </Card>

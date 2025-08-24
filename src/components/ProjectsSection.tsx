@@ -2,39 +2,39 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Github } from 'lucide-react';
-import ecommerceImage from '@/assets/project-ecommerce.jpg';
-import taskAppImage from '@/assets/project-taskapp.jpg';
-import weatherImage from '@/assets/project-weather.jpg';
+import ecommerceImage from '@/assets/E-commerce.png';
+import spa from '@/assets/Spa.png';
+import portfolio from '@/assets/Project-portfolio.png';
 
 const projects = [
   {
     id: 1,
+    title: 'Portfolio Website',
+    description: 'A beautiful Portfolio Website that provides detailed information that About me, About my Projects and About my Tech Skill with an intuitive user interface.',
+    image: portfolio,
+    technologies: ['React', 'TypeScript', 'CSS3', 'Tailwind CSS'],
+    liveUrl: '#',
+    githubUrl: 'https://github.com/Subham-112/synth-code-page',
+    featured: true,
+  },
+  {
+    id: 2,
     title: 'E-Commerce Platform',
     description: 'A full-stack e-commerce solution with user authentication, product management, shopping cart, and payment integration. Built with modern technologies for optimal performance.',
     image: ecommerceImage,
     technologies: ['React', 'Node.js', 'MongoDB', 'Stripe', 'Tailwind CSS'],
     liveUrl: '#',
-    githubUrl: '#',
-    featured: true,
-  },
-  {
-    id: 2,
-    title: 'Task Management App',
-    description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, team collaboration features, and project tracking.',
-    image: taskAppImage,
-    technologies: ['React', 'TypeScript', 'Firebase', 'Material-UI'],
-    liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/Subham-Sahu-112/E-Commerce-Web',
     featured: true,
   },
   {
     id: 3,
-    title: 'Weather Dashboard',
-    description: 'A beautiful weather application that provides detailed weather information, forecasts, and location-based services with an intuitive user interface.',
-    image: weatherImage,
-    technologies: ['React', 'Weather API', 'Chart.js', 'CSS3'],
+    title: 'Spa-Service Website',
+    description: 'A collaborative task management application with real-time updates, drag-and-drop functionality, team collaboration features, and project tracking.',
+    image: spa,
+    technologies: ['React', 'TypeScript', 'Firebase', 'Material-UI'],
     liveUrl: '#',
-    githubUrl: '#',
+    githubUrl: 'https://github.com/Subham-Sahu-112/Spa-web',
     featured: true,
   },
 ];

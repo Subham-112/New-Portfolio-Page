@@ -37,9 +37,8 @@ export const AboutSection = () => {
                     <h3 className="text-xl font-semibold">Who I Am</h3>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">
-                    I'm a passionate software developer with 3+ years of experience creating 
-                    web applications and solving complex problems. I graduated with a Computer 
-                    Science degree and have been continuously learning and adapting to new technologies.
+                    I'm a passionate software developer with 1+ years of experience creating 
+                    web applications and solving complex problems. I am a certified Web developer by Apna College and have been continuously learning and adapting to new technologies.
                   </p>
                 </CardContent>
               </Card>
@@ -51,7 +50,7 @@ export const AboutSection = () => {
                     <h3 className="text-xl font-semibold">What I Do</h3>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">
-                    I specialize in full-stack web development, with expertise in React, Node.js, 
+                    I specialize in full-stack web development, with expertise in React, JavaScript, Node.js, 
                     and modern JavaScript frameworks. I enjoy creating responsive, accessible, 
                     and performant applications that provide excellent user experiences.
                   </p>
